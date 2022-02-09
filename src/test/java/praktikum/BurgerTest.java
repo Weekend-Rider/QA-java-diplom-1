@@ -94,11 +94,11 @@ public class BurgerTest {
         Mockito.when(bun.getName()).thenReturn("TestBun");
         Mockito.when(bun.getPrice()).thenReturn(100f);
 
-        Mockito.when(testIngredient1.getType()).thenReturn(IngredientType.valueOf("SAUCE"));
+        Mockito.when(testIngredient1.getType()).thenReturn(IngredientType.SAUCE);
         Mockito.when(testIngredient1.getPrice()).thenReturn(150f);
         Mockito.when(testIngredient1.getName()).thenReturn("TestIngredient 1");
 
-        Mockito.when(testIngredient2.getType()).thenReturn(IngredientType.valueOf("FILLING"));
+        Mockito.when(testIngredient2.getType()).thenReturn(IngredientType.FILLING);
         Mockito.when(testIngredient2.getPrice()).thenReturn(75f);
         Mockito.when(testIngredient2.getName()).thenReturn("TestIngredient 1");
 
