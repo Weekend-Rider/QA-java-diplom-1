@@ -4,15 +4,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
 
 @RunWith(MockitoJUnitRunner.class)
 
@@ -22,7 +19,6 @@ public class BurgerTest {
     Bun bun;
     Ingredient testIngredient1 = Mockito.mock(Ingredient.class);
     Ingredient testIngredient2 = Mockito.mock(Ingredient.class);
-    Burger burger;
 
     @Test
     public void setBunsTest() {
@@ -35,30 +31,25 @@ public class BurgerTest {
 
     @Test
     public void addIngredientTest() {
-
         Burger burger = new Burger();
         burger.addIngredient(testIngredient1);
         List<Ingredient> expected = new ArrayList<>();
         expected.add(testIngredient1);
         assertEquals(expected, burger.ingredients);
-
     }
 
     @Test
     public void removeIngredientTest() {
-
         Burger burger = new Burger();
         System.out.println(testIngredient1);
         burger.addIngredient(testIngredient1);
         burger.removeIngredient(0);
         List<Ingredient> expected = new ArrayList<>();
         assertEquals(expected, burger.ingredients);
-
     }
 
     @Test
     public void moveIngredientTest() {
-
         Burger burger = new Burger();
         burger.addIngredient(testIngredient1);
         burger.addIngredient(testIngredient2);
@@ -67,12 +58,10 @@ public class BurgerTest {
         expected.add(testIngredient2);
         expected.add(testIngredient1);
         assertEquals(expected, burger.ingredients);
-
     }
 
     @Test
     public void getPriceTest() {
-
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(testIngredient1);
@@ -81,12 +70,10 @@ public class BurgerTest {
         Mockito.when(testIngredient1.getPrice()).thenReturn(150f);
         Mockito.when(testIngredient2.getPrice()).thenReturn(75f);
         assertEquals(425, burger.getPrice(), 0.0);
-
     }
 
     @Test
     public void getReceiptTest() {
-
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(testIngredient1);
@@ -109,6 +96,5 @@ public class BurgerTest {
                 "\r\n" +
                 "Price: 425,000000\r\n";
         assertEquals(expected, burger.getReceipt());
-
     }
 }

@@ -10,7 +10,6 @@ public class BunTest {
 
     @Test
     public void getNameTest() {
-
         String actual = bun.getName();
         String expected = "Name";
         assertEquals(expected, actual);
@@ -18,7 +17,6 @@ public class BunTest {
 
     @Test
     public void getPriceTest() {
-
         float actual = bun.getPrice();
         float expected = 123.0f;
         assertEquals(expected, actual,0.0);
